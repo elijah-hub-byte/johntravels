@@ -1,0 +1,167 @@
+// ═══════════════════════════════════════════════════════
+//  JOHN TRAVELS  –  EN / Telugu Translations
+// ═══════════════════════════════════════════════════════
+const TRANSLATIONS = {
+  en: {
+    tagline:"Ravulapalem", nav_home:"Home", nav_vehicles:"Vehicles",
+    nav_booking:"Book Now", nav_driver:"Our Driver", nav_about:"About Us",
+    nav_contact:"Contact", nav_vehicles_m:"🚗 Vehicles", nav_booking_m:"📋 Book Now",
+    nav_driver_m:"👤 Our Driver", nav_about_m:"ℹ️ About Us", nav_contact_m:"📞 Contact",
+    call_now:"Call Now", whatsapp:"WhatsApp",
+    badge:"✦ Trusted Travel Partner in Ravulapalem",
+    hero_line1:"Your Journey,", hero_line2:"Our Passion",
+    hero_sub:"Premium cab services for local rides, outstation trips, airport transfers & tour packages. Comfortable. Reliable. Always on time.",
+    call_book:"Call to Book: 9603689642", book_on_wa:"Book on WhatsApp",
+    view_vehicles:"View Our Vehicles",
+    pill_local:"🏙 Local Rides", pill_out:"🛣 Outstation", pill_air:"✈ Airport", pill_tour:"🕌 Tours",
+    scroll:"Scroll",
+    stat_trips:"Trips Completed", stat_customers:"Happy Customers",
+    stat_cities:"Cities Covered", stat_years:"Years Experience",
+    fleet_tag:"Our Fleet", fleet_title:"Choose Your Perfect Ride",
+    fleet_sub:"From compact hatchbacks to premium SUVs — the right vehicle for every trip and budget.",
+    hatch:"Hatchback", sedan:"Sedan", muv:"MUV · 7-Seater", premium:"Premium · 7-Seater",
+    swift_tag:"Perfect for city rides & short trips",
+    dzire_tag:"Comfortable sedan for long outstation trips",
+    ertiga_tag:"Ideal for family trips & group travel",
+    innova_tag:"Premium SUV for tours & corporate travel",
+    p4:"4 Passengers", p7:"7 Passengers", b2:"2 Luggage Bags", b3:"3 Luggage Bags",
+    b4:"4 Luggage Bags", b5:"5 Luggage Bags", ac:"AC Available", fuel:"Fuel Efficient",
+    acm:"AC + Music", boot:"Spacious Boot", acc:"AC + Charging", rows:"3-Row Comfort",
+    wifi:"Premium AC + WiFi", lux:"Luxury Interior",
+    book_num:"📞 Book: 9603689642",
+    bus_title:"🚌 Bus Facility Available!", enquire:"Enquire Now",
+    bus_sub:"Large group trip, pilgrimage, or corporate outing? We offer comfortable bus services for bigger groups.",
+    book_tag:"Book a Ride", book_title:"Send Your Booking Enquiry",
+    book_sub:"Fill the form and we'll call you within minutes to confirm your ride.",
+    f_name:"Your Name *", f_phone:"Phone Number *", f_vehicle:"Vehicle Type",
+    f_trip_type:"Trip Type", f_from:"From Location", f_to:"To Location",
+    f_date:"Travel Date", f_time:"Pickup Time", f_msg:"Message (Optional)",
+    send_enquiry:"Send Enquiry", or_wa:"Or Book on WhatsApp",
+    call_directly:"Prefer to Call?", call_note:"Available 24/7 — call anytime for instant booking.",
+    quick_confirm:"Quick Confirmation",
+    quick_note:"We call back within 5 minutes of your enquiry to confirm the ride.",
+    our_base:"Our Base",
+    base_note:"Ravulapalem, East Godavari, AP. Serving all nearby towns & outstation routes.",
+    driver_tag:"Meet Your Driver", driver_title:"Your Trusted Driver Profile",
+    driver_sub:"Experienced, licensed, and always professional — John is committed to making every journey safe and comfortable.",
+    driver_role:"Professional Cab Driver",
+    d_exp:"Years Experience", d_trips:"Trips Done", d_rating:"Rating", d_safe:"Safety Record",
+    sk_routes:"Route Expert", sk_night:"Night Driving", sk_outstation:"Outstation Specialist",
+    driver_bio:'"I take pride in giving every passenger a safe, comfortable, and on-time journey. Your satisfaction is my mission."',
+    call_john:"Call John: 9603689642", wa_john:"WhatsApp John",
+    test_tag:"Customer Reviews", test_title:"What Our Customers Say",
+    test_sub:"Real reviews from real passengers who travelled with John Travels.",
+    about_tag:"Who We Are", about_title:"Why Choose John Travels?",
+    about_sub:"Serving Ravulapalem and surrounding areas with professional, comfortable, and affordable travel solutions.",
+    c1_title:"Regular Maintenance", c1_text:"All vehicles undergo routine checks to ensure zero breakdowns on your journey.",
+    c2_title:"Safe & Reliable",     c2_text:"Verified drivers, insured vehicles — your safety is always first.",
+    c3_title:"Spotless Cleaning",   c3_text:"Interior deep-cleaned before every trip. Fresh, hygienic vehicles every ride.",
+    c4_title:"24/7 Support",        c4_text:"Call or WhatsApp anytime — round the clock for bookings & help.",
+    c5_title:"Expert Drivers",      c5_text:"Experienced, polite, licensed drivers who know every route perfectly.",
+    c6_title:"Always On Time",      c6_text:"Punctuality is our promise. We pick you up exactly when you need.",
+    contact_tag:"Get In Touch", contact_title:"Book Your Ride Today",
+    contact_sub:"Reach out via call or WhatsApp — always ready to assist with bookings and enquiries.",
+    ct_phone:"Phone / Call", ct_phone_d:"Available 24/7 for bookings and emergencies.",
+    ct_wa:"WhatsApp", ct_wa_d:"Book on WhatsApp — send trip details, confirm in minutes.",
+    ct_loc:"Location", ct_loc_d:"East Godavari District, Andhra Pradesh. Covering all nearby areas & outstation.",
+    ct_avail:"Availability", ct_avail_d:"Round the clock, every day including holidays.",
+    serving_title:"Serving Ravulapalem & Beyond",
+    serving_sub:"Local rides, outstation trips to Vizag, Hyderabad, Vijayawada, airport transfers, and pilgrimage tours.",
+    book_wa_tip:"Book on WhatsApp", chat_wa:"Chat on WhatsApp",
+  },
+  te: {
+    tagline:"రావులపాలెం", nav_home:"హోమ్", nav_vehicles:"వాహనాలు",
+    nav_booking:"ఇప్పుడే బుక్", nav_driver:"మా డ్రైవర్", nav_about:"మా గురించి",
+    nav_contact:"సంప్రదింపు", nav_vehicles_m:"🚗 వాహనాలు", nav_booking_m:"📋 ఇప్పుడే బుక్",
+    nav_driver_m:"👤 మా డ్రైవర్", nav_about_m:"ℹ️ మా గురించి", nav_contact_m:"📞 సంప్రదింపు",
+    call_now:"కాల్ చేయండి", whatsapp:"వాట్సాప్",
+    badge:"✦ రావులపాలెంలో విశ్వసనీయ ట్రావెల్ పార్ట్‌నర్",
+    hero_line1:"మీ ప్రయాణం,", hero_line2:"మా అభిమానం",
+    hero_sub:"స్థానిక రైడ్లు, అవుట్‌స్టేషన్, విమానాశ్రయ బదిలీలు & టూర్ ప్యాకేజీలకు ప్రీమియం క్యాబ్ సేవలు. సౌకర్యంగా. విశ్వసనీయంగా. ఎల్లప్పుడూ సమయానికి.",
+    call_book:"బుక్ చేయడానికి కాల్: 9603689642", book_on_wa:"వాట్సాప్‌లో బుక్ చేయండి",
+    view_vehicles:"మా వాహనాలు చూడండి",
+    pill_local:"🏙 స్థానిక రైడ్లు", pill_out:"🛣 అవుట్‌స్టేషన్", pill_air:"✈ విమానాశ్రయం", pill_tour:"🕌 టూర్లు",
+    scroll:"స్క్రోల్",
+    stat_trips:"పూర్తయిన ప్రయాణాలు", stat_customers:"సంతోషకరమైన కస్టమర్లు",
+    stat_cities:"కవర్ చేసిన నగరాలు", stat_years:"సంవత్సరాల అనుభవం",
+    fleet_tag:"మా ఫ్లీట్", fleet_title:"మీ పర్ఫెక్ట్ రైడ్ ఎంచుకోండి",
+    fleet_sub:"చిన్న హ్యాచ్‌బ్యాక్ నుండి ప్రీమియం SUV వరకు — ప్రతి ట్రిప్‌కు సరైన వాహనం.",
+    hatch:"హ్యాచ్‌బ్యాక్", sedan:"సెడాన్", muv:"MUV · 7 సీట్లు", premium:"ప్రీమియం · 7 సీట్లు",
+    swift_tag:"సిటీ రైడ్లు & చిన్న ట్రిప్‌లకు అనువైనది",
+    dzire_tag:"లాంగ్ ట్రిప్‌లకు సౌకర్యవంతమైన సెడాన్",
+    ertiga_tag:"కుటుంబ ట్రిప్‌లు & గ్రూప్ ట్రావెల్‌కు అనువైనది",
+    innova_tag:"టూర్లు & కార్పొరేట్ ట్రావెల్‌కు ప్రీమియం SUV",
+    p4:"4 ప్రయాణీకులు", p7:"7 ప్రయాణీకులు",
+    b2:"2 లగేజ్ బ్యాగ్లు", b3:"3 లగేజ్ బ్యాగ్లు",
+    b4:"4 లగేజ్ బ్యాగ్లు", b5:"5 లగేజ్ బ్యాగ్లు",
+    ac:"AC అందుబాటులో ఉంది", fuel:"ఇంధన ఆదా", acm:"AC + మ్యూజిక్",
+    boot:"విశాలమైన బూట్", acc:"AC + చార్జింగ్", rows:"3-వరుసల సౌకర్యం",
+    wifi:"ప్రీమియం AC + WiFi", lux:"లగ్జరీ ఇంటీరియర్",
+    book_num:"📞 బుక్: 9603689642",
+    bus_title:"🚌 బస్ సదుపాయం అందుబాటులో ఉంది!", enquire:"ఇప్పుడు విచారించండి",
+    bus_sub:"పెద్ద గ్రూప్ ట్రిప్, యాత్ర, లేదా కార్పొరేట్ అవుటింగ్? మేము పెద్ద గ్రూప్‌లకు బస్ సేవలు అందిస్తాము.",
+    book_tag:"రైడ్ బుక్ చేయండి", book_title:"మీ బుకింగ్ విచారణ పంపండి",
+    book_sub:"ఫారమ్ నింపండి, మేము నిమిషాల్లో మీకు కాల్ చేసి రైడ్ నిర్ధారిస్తాము.",
+    f_name:"మీ పేరు *", f_phone:"ఫోన్ నంబర్ *", f_vehicle:"వాహన రకం",
+    f_trip_type:"ట్రిప్ రకం", f_from:"ఎక్కడ నుండి", f_to:"ఎక్కడికి",
+    f_date:"ప్రయాణ తేదీ", f_time:"పికప్ సమయం", f_msg:"సందేశం (ఐచ్ఛికం)",
+    send_enquiry:"విచారణ పంపండి", or_wa:"లేదా వాట్సాప్‌లో బుక్ చేయండి",
+    call_directly:"కాల్ చేయాలనుకుంటున్నారా?",
+    call_note:"24/7 అందుబాటులో — తక్షణ బుకింగ్ కోసం ఎప్పుడైనా కాల్ చేయండి.",
+    quick_confirm:"త్వరిత నిర్ధారణ",
+    quick_note:"మీ విచారణ తర్వాత 5 నిమిషాల్లో రైడ్ నిర్ధారించడానికి కాల్ చేస్తాము.",
+    our_base:"మా బేస్",
+    base_note:"రావులపాలెం, తూర్పు గోదావరి, AP. అన్ని పొరుగు పట్టణాలు & అవుట్‌స్టేషన్ సేవలు.",
+    driver_tag:"మీ డ్రైవర్‌ను కలవండి", driver_title:"మీ విశ్వసనీయ డ్రైవర్ ప్రొఫైల్",
+    driver_sub:"అనుభవం కలిగిన, లైసెన్స్ ఉన్న, మరియు ఎల్లప్పుడూ ప్రొఫెషనల్ — జాన్ ప్రతి ప్రయాణాన్ని సురక్షితంగా చేస్తాడు.",
+    driver_role:"ప్రొఫెషనల్ క్యాబ్ డ్రైవర్",
+    d_exp:"సంవత్సరాల అనుభవం", d_trips:"ట్రిప్‌లు పూర్తయ్యాయి",
+    d_rating:"రేటింగ్", d_safe:"భద్రతా రికార్డు",
+    sk_routes:"రూట్ నిపుణుడు", sk_night:"రాత్రి డ్రైవింగ్", sk_outstation:"అవుట్‌స్టేషన్ స్పెషలిస్ట్",
+    driver_bio:'"ప్రతి ప్రయాణీకుడికి సురక్షితమైన, సౌకర్యవంతమైన, సమయానికి ప్రయాణం ఇవ్వడంలో నాకు గర్వంగా ఉంది."',
+    call_john:"జాన్‌కు కాల్: 9603689642", wa_john:"జాన్‌కు వాట్సాప్",
+    test_tag:"కస్టమర్ రివ్యూలు", test_title:"మా కస్టమర్లు ఏమంటున్నారు",
+    test_sub:"జాన్ ట్రావెల్స్‌తో ప్రయాణించిన వాస్తవ ప్రయాణీకుల అభిప్రాయాలు.",
+    about_tag:"మేము ఎవరు", about_title:"జాన్ ట్రావెల్స్ ఎందుకు ఎంచుకోవాలి?",
+    about_sub:"రావులపాలెం మరియు పరిసర ప్రాంతాలకు ప్రొఫెషనల్, సౌకర్యవంతమైన మరియు అందుబాటు ధరలో ట్రావెల్ సేవలు.",
+    c1_title:"నిర్వహణ", c1_text:"అన్ని వాహనాలకు రెగ్యులర్ సర్వీసింగ్ చేస్తాము.",
+    c2_title:"సురక్షితం & విశ్వసనీయం", c2_text:"ధృవీకరించిన డ్రైవర్లు, బీమా ఉన్న వాహనాలు.",
+    c3_title:"శుభ్రంగా ఉంటాయి", c3_text:"ప్రతి ట్రిప్ ముందు ఇంటీరియర్ శుభ్రం చేస్తాము.",
+    c4_title:"24/7 సహాయం", c4_text:"బుకింగ్ & సహాయానికి ఎప్పుడైనా కాల్ చేయండి.",
+    c5_title:"నిపుణ డ్రైవర్లు", c5_text:"అనుభవం కలిగిన, మర్యాదగా ఉండే లైసెన్స్ డ్రైవర్లు.",
+    c6_title:"ఎల్లప్పుడూ సమయానికి", c6_text:"సమయపాలన మా వాగ్దానం. మీకు అవసరమైనప్పుడు వస్తాము.",
+    contact_tag:"సంప్రదించండి", contact_title:"ఈరోజే మీ రైడ్ బుక్ చేయండి",
+    contact_sub:"కాల్ లేదా వాట్సాప్ ద్వారా సంప్రదించండి — బుకింగ్లకు ఎల్లప్పుడూ సిద్ధంగా ఉంటాం.",
+    ct_phone:"ఫోన్ / కాల్", ct_phone_d:"బుకింగ్లు మరియు అత్యవసరాలకు 24/7 అందుబాటులో.",
+    ct_wa:"వాట్సాప్", ct_wa_d:"వాట్సాప్‌లో బుక్ చేయండి — ట్రిప్ వివరాలు పంపండి, నిమిషాల్లో నిర్ధారించబడుతుంది.",
+    ct_loc:"స్థానం", ct_loc_d:"తూర్పు గోదావరి జిల్లా, ఆంధ్రప్రదేశ్. అన్ని పొరుగు ప్రాంతాలు.",
+    ct_avail:"అందుబాటు", ct_avail_d:"సెలవు రోజులతో సహా, సంవత్సరం పొడుగూతా అందుబాటు.",
+    serving_title:"రావులపాలెం & పరిసర ప్రాంతాలకు సేవలు",
+    serving_sub:"స్థానిక రైడ్లు, విజాగ్, హైదరాబాద్, విజయవాడ అవుట్‌స్టేషన్, విమానాశ్రయ బదిలీలు మరియు యాత్రా టూర్లు.",
+    book_wa_tip:"వాట్సాప్‌లో బుక్ చేయండి", chat_wa:"వాట్సాప్‌లో చాట్ చేయండి",
+  }
+};
+
+let currentLang = localStorage.getItem('jt_lang') || 'en';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('jt_lang', lang);
+  const t = TRANSLATIONS[lang];
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  // Update lang toggle labels
+  const lbl = document.getElementById('langLabel');
+  const mob = document.getElementById('langToggleMobile');
+  if (lbl) lbl.textContent = lang === 'en' ? 'EN | తె' : 'తె | EN';
+  if (mob) mob.textContent = lang === 'en' ? 'EN ⇄ తెలుగు' : 'తెలుగు ⇄ EN';
+  document.getElementById('html-root').lang = lang === 'en' ? 'en' : 'te';
+}
+
+function toggleLang() {
+  applyLanguage(currentLang === 'en' ? 'te' : 'en');
+}
+
+document.addEventListener('DOMContentLoaded', () => applyLanguage(currentLang));

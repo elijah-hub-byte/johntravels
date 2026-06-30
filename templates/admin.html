@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel – John Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a1f44;--gold:#c9a227;--green:#25d366;--off:#f5f7fb;--border:rgba(10,31,68,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--navy)}
+  .topbar{background:var(--navy);color:#fff;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .topbar h1{font-size:20px;font-weight:700}
+  .topbar a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:600}
+  .wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+  /* Stats cards */
+  .stat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+  .sc{background:#fff;border-radius:12px;padding:20px;border:1px solid var(--border);text-align:center}
+  .sc-num{font-size:32px;font-weight:900;color:var(--navy)}
+  .sc-lbl{font-size:12px;color:#7a8aab;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  /* Stats editor */
+  .edit-stats{background:#fff;border-radius:12px;padding:24px;border:1px solid var(--border);margin-bottom:32px}
+  .edit-stats h2{font-size:16px;font-weight:700;margin-bottom:16px}
+  .edit-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .edit-group label{font-size:12px;font-weight:600;color:var(--navy);display:block;margin-bottom:4px}
+  .edit-group input{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;outline:none}
+  .edit-group input:focus{border-color:#1d4ed8}
+  .btn{padding:10px 20px;border:none;border-radius:8px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:#143568}
+  .btn-red{background:#dc2626;color:#fff}
+  .btn-red:hover{background:#b91c1c}
+  .btn-green{background:#16a34a;color:#fff}
+  .btn-green:hover{background:#15803d}
+  .btn-sm{padding:6px 12px;font-size:12px}
+  /* Tables */
+  .section-card{background:#fff;border-radius:12px;border:1px solid var(--border);margin-bottom:28px;overflow:hidden}
+  .section-card h2{padding:18px 24px;font-size:16px;font-weight:700;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+  .badge-new{background:rgba(29,78,216,.1);color:#1d4ed8}
+  .badge-confirmed{background:rgba(22,163,74,.1);color:#16a34a}
+  .badge-done{background:rgba(107,114,128,.1);color:#6b7280}
+  table{width:100%;border-collapse:collapse}
+  th{background:var(--off);padding:10px 16px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#7a8aab;font-weight:600}
+  td{padding:12px 16px;border-top:1px solid var(--border);font-size:13px;vertical-align:top}
+  tr:hover td{background:#fafbfc}
+  .empty{padding:32px;text-align:center;color:#7a8aab;font-size:14px}
+  .actions{display:flex;gap:6px;flex-wrap:wrap}
+  select.status-sel{padding:5px 8px;border:1.5px solid var(--border);border-radius:6px;font-size:12px;cursor:pointer;background:#fff}
+  @media(max-width:768px){
+    .stat-cards{grid-template-columns:repeat(2,1fr)}
+    .edit-row{grid-template-columns:repeat(2,1fr)}
+    table{font-size:12px}
+    th,td{padding:8px 10px}
+    .topbar{padding:14px 16px}
+    .wrap{padding:16px}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🚗 John Travels — Admin</h1>
+  <a href="/">← Back to Website</a>
+</div>
+<div class="wrap">
+
+  <!-- STATS CARDS -->
+  <div class="stat-cards">
+    <div class="sc"><div class="sc-num">{{ stats.trips_completed if stats else 0 }}</div><div class="sc-lbl">Trips Completed</div></div>
+    <div class="sc"><div class="sc-num">{{ stats.happy_customers if stats else 0 }}</div><div class="sc-lbl">Happy Customers</div></div>
+    <div class="sc"><div class="sc-num">{{ enquiries|length }}</div><div class="sc-lbl">Total Enquiries</div></div>
+    <div class="sc"><div class="sc-num">{{ contacts|length }}</div><div class="sc-lbl">Contact Messages</div></div>
+  </div>
+
+  <!-- EDIT STATS -->
+  <div class="edit-stats">
+    <h2>✏️ Edit Live Stats</h2>
+    <div class="edit-row">
+      <div class="edit-group"><label>Trips Completed</label><input type="number" id="es_trips" value="{{ stats.trips_completed if stats else 1500 }}"></div>
+      <div class="edit-group"><label>Happy Customers</label><input type="number" id="es_cust"  value="{{ stats.happy_customers  if stats else 800  }}"></div>
+      <div class="edit-group"><label>Cities Covered</label> <input type="number" id="es_city"  value="{{ stats.cities_covered   if stats else 15   }}"></div>
+      <div class="edit-group"><label>Years Experience</label><input type="number" id="es_years" value="{{ stats.years_experience  if stats else 8    }}"></div>
+    </div>
+    <button class="btn btn-navy" style="margin-top:14px" onclick="saveStats()">💾 Save Stats</button>
+    <span id="stats-msg" style="font-size:13px;margin-left:12px;color:#16a34a"></span>
+  </div>
+
+  <!-- ENQUIRIES -->
+  <div class="section-card">
+    <h2>📋 Booking Enquiries <span style="font-size:13px;font-weight:500;color:#7a8aab">({{ enquiries|length }} total)</span></h2>
+    {% if enquiries %}
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr>
+        <th>#</th><th>Name</th><th>Phone</th><th>Vehicle</th><th>Trip</th>
+        <th>From → To</th><th>Date</th><th>Message</th><th>Status</th><th>Received</th><th>Actions</th>
+      </tr></thead>
+      <tbody>
+      {% for e in enquiries %}
+      <tr id="erow-{{ e.id }}">
+        <td>{{ e.id }}</td>
+        <td><strong>{{ e.name }}</strong></td>
+        <td><a href="tel:{{ e.phone }}" style="color:#1d4ed8">{{ e.phone }}</a></td>
+        <td>{{ e.vehicle or '—' }}</td>
+        <td>{{ e.trip_type or '—' }}</td>
+        <td>{{ e.from_location or '—' }} → {{ e.to_location or '—' }}</td>
+        <td>{{ e.trip_date or '—' }}</td>
+        <td style="max-width:160px;word-break:break-word">{{ e.message or '—' }}</td>
+        <td>
+          <span class="badge badge-{{ e.status }}">{{ e.status }}</span>
+          <select class="status-sel" onchange="updateStatus({{ e.id }}, this.value)" style="margin-top:4px;display:block">
+            <option value="new"       {% if e.status=='new' %}selected{% endif %}>new</option>
+            <option value="confirmed" {% if e.status=='confirmed' %}selected{% endif %}>confirmed</option>
+            <option value="done"      {% if e.status=='done' %}selected{% endif %}>done</option>
+          </select>
+        </td>
+        <td>{{ e.created_at.strftime('%d %b %Y %H:%M') }}</td>
+        <td>
+          <div class="actions">
+            <a href="tel:{{ e.phone }}" class="btn btn-green btn-sm">📞 Call</a>
+            <a href="https://wa.me/91{{ e.phone }}?text=Hi%20{{ e.name }}!%20Confirming%20your%20John%20Travels%20booking." target="_blank" class="btn btn-sm" style="background:#25d366;color:#fff">💬 WA</a>
+            <button class="btn btn-red btn-sm" onclick="deleteEnquiry({{ e.id }})">🗑</button>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% else %}<div class="empty">No booking enquiries yet.</div>{% endif %}
+  </div>
+
+  <!-- CONTACT MESSAGES -->
+  <div class="section-card">
+    <h2>📩 Contact Messages <span style="font-size:13px;font-weight:500;color:#7a8aab">({{ contacts|length }} total)</span></h2>
+    {% if contacts %}
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>#</th><th>Name</th><th>Phone</th><th>Message</th><th>Received</th><th>Action</th></tr></thead>
+      <tbody>
+      {% for c in contacts %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td><strong>{{ c.name }}</strong></td>
+        <td><a href="tel:{{ c.phone }}" style="color:#1d4ed8">{{ c.phone }}</a></td>
+        <td style="max-width:300px">{{ c.message or '—' }}</td>
+        <td>{{ c.created_at.strftime('%d %b %Y %H:%M') }}</td>
+        <td><a href="tel:{{ c.phone }}" class="btn btn-green btn-sm">📞 Call</a></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% else %}<div class="empty">No contact messages yet.</div>{% endif %}
+  </div>
+
+</div>
+<script>
+async function saveStats() {
+  const body = {
+    trips_completed:  parseInt(document.getElementById('es_trips').value),
+    happy_customers:  parseInt(document.getElementById('es_cust').value),
+    cities_covered:   parseInt(document.getElementById('es_city').value),
+    years_experience: parseInt(document.getElementById('es_years').value),
+  };
+  const res  = await fetch('/api/stats', { method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) });
+  const json = await res.json();
+  const msg  = document.getElementById('stats-msg');
+  msg.textContent = json.success ? '✅ Saved!' : '❌ Error';
+  setTimeout(() => msg.textContent = '', 3000);
+}
+async function updateStatus(id, status) {
+  await fetch(`/api/enquiry/${id}`, { method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify({status}) });
+  const row = document.getElementById(`erow-${id}`);
+  if (row) row.querySelector('.badge').className = `badge badge-${status}`;
+  row.querySelector('.badge').textContent = status;
+}
+async function deleteEnquiry(id) {
+  if (!confirm('Delete this enquiry?')) return;
+  const res = await fetch(`/api/enquiry/${id}`, { method:'DELETE' });
+  const json = await res.json();
+  if (json.success) document.getElementById(`erow-${id}`)?.remove();
+}
+</script>
+</body>
+</html>

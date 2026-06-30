@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="John Travels - Premium cab services in Ravulapalem. Swift, Dzire, Ertiga, Innova & Bus 24/7.">
+<meta name="theme-color" content="#0a1f44">
+<title>John Travels – Ravulapalem</title>
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="logo">
+    <div class="logo-icon">JT</div>
+    <div class="logo-text">
+      <span class="logo-name">John Travels</span>
+      <span class="logo-tagline" data-key="tagline">Ravulapalem</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home"         data-key="nav_home">Home</a></li>
+    <li><a href="#vehicles"     data-key="nav_vehicles">Vehicles</a></li>
+    <li><a href="#booking"      data-key="nav_booking">Book Now</a></li>
+    <li><a href="#driver"       data-key="nav_driver">Our Driver</a></li>
+    <li><a href="#about"        data-key="nav_about">About Us</a></li>
+    <li><a href="#contact"      data-key="nav_contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-toggle" id="langToggle" title="Switch Language">
+      <span id="langLabel">EN | తె</span>
+    </button>
+    <div class="nav-buttons">
+      <a href="tel:9603689642" class="nav-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-key="call_now">Call Now</span>
+      </a>
+      <a href="https://wa.me/919603689642?text=Hi%20John%20Travels!%20I%20want%20to%20book." target="_blank" class="nav-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-key="whatsapp">WhatsApp</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"     onclick="closeMenu()" data-key="nav_home">🏠 Home</a>
+  <a href="#vehicles" onclick="closeMenu()" data-key="nav_vehicles_m">🚗 Vehicles</a>
+  <a href="#booking"  onclick="closeMenu()" data-key="nav_booking_m">📋 Book Now</a>
+  <a href="#driver"   onclick="closeMenu()" data-key="nav_driver_m">👤 Our Driver</a>
+  <a href="#about"    onclick="closeMenu()" data-key="nav_about_m">ℹ️ About Us</a>
+  <a href="#contact"  onclick="closeMenu()" data-key="nav_contact_m">📞 Contact</a>
+  <div class="mobile-menu-divider"></div>
+  <div class="mobile-lang-row">
+    <span class="mobile-lang-label">Language / భాష:</span>
+    <button class="btn-lang-mobile" id="langToggleMobile">EN ⇄ తెలుగు</button>
+  </div>
+  <div class="mobile-menu-btns">
+    <a href="tel:9603689642" class="m-call">📞 Call: 9603689642</a>
+    <a href="https://wa.me/919603689642?text=Hi%20John%20Travels!" target="_blank" class="m-wa" onclick="closeMenu()">💬 Book on WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════ 1. HOME ══════ -->
+<section id="home">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='videos/head.mp4') }}" type="video/mp4">
+  </video>
+  <div class="home-overlay"></div>
+  <div class="home-content">
+    <div class="home-badge" data-key="badge">✦ Trusted Travel Partner in Ravulapalem</div>
+    <h1 class="home-title"><span data-key="hero_line1">Your Journey,</span><br><span data-key="hero_line2">Our <em>Passion</em></span></h1>
+    <p class="home-sub" data-key="hero_sub">Premium cab services for local rides, outstation trips, airport transfers &amp; tour packages. Comfortable. Reliable. Always on time.</p>
+    <div class="home-btns">
+      <a href="tel:9603689642" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-key="call_book">Call to Book: 9603689642</span>
+      </a>
+      <a href="https://wa.me/919603689642?text=Hi%20John%20Travels!%20I%20want%20to%20book." target="_blank" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-key="book_on_wa">Book on WhatsApp</span>
+      </a>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:12px;">
+      <a href="#vehicles" class="btn-vehicles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><rect x="1" y="3" width="22" height="13" rx="2"/><path d="M16 16v3a2 2 0 01-2 2H10a2 2 0 01-2-2v-3"/></svg>
+        <span data-key="view_vehicles">View Our Vehicles</span>
+      </a>
+    </div>
+    <div class="trip-pills">
+      <span class="trip-pill" data-key="pill_local">🏙 Local Rides</span>
+      <span class="trip-pill" data-key="pill_out">🛣 Outstation</span>
+      <span class="trip-pill" data-key="pill_air">✈ Airport</span>
+      <span class="trip-pill" data-key="pill_tour">🕌 Tours</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-dot"></div><span data-key="scroll">Scroll</span></div>
+</section>
+
+<!-- Mini car -->
+<div id="mini-car">
+  <svg class="mini-car-wrap" viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="12" width="56" height="14" rx="4" fill="#0a1f44"/>
+    <rect x="10" y="6" width="34" height="14" rx="4" fill="#143568"/>
+    <rect x="14" y="8" width="10" height="9" rx="2" fill="#7ab8e8" opacity=".9"/>
+    <rect x="27" y="8" width="10" height="9" rx="2" fill="#7ab8e8" opacity=".9"/>
+    <rect x="4" y="19" width="56" height="4" rx="1" fill="#0a1f44"/>
+    <circle cx="16" cy="27" r="5" fill="#222"/><circle cx="16" cy="27" r="2.5" fill="#888"/>
+    <circle cx="48" cy="27" r="5" fill="#222"/><circle cx="48" cy="27" r="2.5" fill="#888"/>
+    <rect x="2" y="15" width="4" height="3" rx="1" fill="#c9a227"/>
+    <rect x="58" y="15" width="4" height="3" rx="1" fill="#e55" opacity=".8"/>
+  </svg>
+</div>
+
+<!-- ══════ STATS BAR ══════ -->
+<div class="stats-bar" id="statsBar">
+  <div class="stat-item"><div class="stat-number" id="stat-trips">0</div><div class="stat-label" data-key="stat_trips">Trips Completed</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-number" id="stat-customers">0</div><div class="stat-label" data-key="stat_customers">Happy Customers</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-number" id="stat-cities">0</div><div class="stat-label" data-key="stat_cities">Cities Covered</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-number" id="stat-years">0</div><div class="stat-label" data-key="stat_years">Years Experience</div></div>
+</div>
+
+<!-- ══════ 2. VEHICLES ══════ -->
+<section id="vehicles">
+  <span class="section-tag" data-key="fleet_tag">Our Fleet</span>
+  <h2 class="section-title" data-key="fleet_title">Choose Your<br>Perfect Ride</h2>
+  <p class="section-sub" data-key="fleet_sub">From compact hatchbacks to premium SUVs — the right vehicle for every trip and every budget.</p>
+  <div class="vehicle-list">
+
+    <div class="vehicle-card" data-aos>
+      <div class="vehicle-img-wrap"><img src="{{ url_for('static', filename='images/swift.png') }}" alt="Maruti Swift" loading="lazy"></div>
+      <div class="vehicle-info">
+        <span class="vehicle-badge" data-key="hatch">Hatchback</span>
+        <h3 class="vehicle-name">Maruti Swift</h3>
+        <p class="vehicle-tagline" data-key="swift_tag">Perfect for city rides &amp; short trips</p>
+        <div class="vehicle-specs">
+          <div class="spec"><span class="sico">👥</span><span data-key="p4">4 Passengers</span></div>
+          <div class="spec"><span class="sico">🧳</span><span data-key="b2">2 Luggage Bags</span></div>
+          <div class="spec"><span class="sico">❄️</span><span data-key="ac">AC Available</span></div>
+          <div class="spec"><span class="sico">⛽</span><span data-key="fuel">Fuel Efficient</span></div>
+        </div>
+        <a href="tel:9603689642" class="vehicle-book" data-key="book_num">📞 Book: 9603689642</a>
+      </div>
+    </div>
+
+    <div class="vehicle-card reverse" data-aos>
+      <div class="vehicle-img-wrap"><img src="{{ url_for('static', filename='images/dzire.png') }}" alt="Maruti Dzire" loading="lazy"></div>
+      <div class="vehicle-info">
+        <span class="vehicle-badge" data-key="sedan">Sedan</span>
+        <h3 class="vehicle-name">Maruti Dzire</h3>
+        <p class="vehicle-tagline" data-key="dzire_tag">Comfortable sedan for long outstation trips</p>
+        <div class="vehicle-specs">
+          <div class="spec"><span class="sico">👥</span><span data-key="p4">4 Passengers</span></div>
+          <div class="spec"><span class="sico">🧳</span><span data-key="b3">3 Luggage Bags</span></div>
+          <div class="spec"><span class="sico">🎵</span><span data-key="acm">AC + Music</span></div>
+          <div class="spec"><span class="sico">📦</span><span data-key="boot">Spacious Boot</span></div>
+        </div>
+        <a href="tel:9603689642" class="vehicle-book" data-key="book_num">📞 Book: 9603689642</a>
+      </div>
+    </div>
+
+    <div class="vehicle-card" data-aos>
+      <div class="vehicle-img-wrap"><img src="{{ url_for('static', filename='images/ertiga.png') }}" alt="Maruti Ertiga" loading="lazy"></div>
+      <div class="vehicle-info">
+        <span class="vehicle-badge" data-key="muv">MUV · 7-Seater</span>
+        <h3 class="vehicle-name">Maruti Ertiga</h3>
+        <p class="vehicle-tagline" data-key="ertiga_tag">Ideal for family trips &amp; group travel</p>
+        <div class="vehicle-specs">
+          <div class="spec"><span class="sico">👥</span><span data-key="p7">7 Passengers</span></div>
+          <div class="spec"><span class="sico">🧳</span><span data-key="b4">4 Luggage Bags</span></div>
+          <div class="spec"><span class="sico">🔌</span><span data-key="acc">AC + Charging</span></div>
+          <div class="spec"><span class="sico">💺</span><span data-key="rows">3-Row Comfort</span></div>
+        </div>
+        <a href="tel:9603689642" class="vehicle-book" data-key="book_num">📞 Book: 9603689642</a>
+      </div>
+    </div>
+
+    <div class="vehicle-card reverse" data-aos>
+      <div class="vehicle-img-wrap"><img src="{{ url_for('static', filename='images/innova.png') }}" alt="Toyota Innova" loading="lazy"></div>
+      <div class="vehicle-info">
+        <span class="vehicle-badge" data-key="premium">Premium · 7-Seater</span>
+        <h3 class="vehicle-name">Toyota Innova</h3>
+        <p class="vehicle-tagline" data-key="innova_tag">Premium SUV for tours &amp; corporate travel</p>
+        <div class="vehicle-specs">
+          <div class="spec"><span class="sico">👥</span><span data-key="p7">7 Passengers</span></div>
+          <div class="spec"><span class="sico">🧳</span><span data-key="b5">5 Luggage Bags</span></div>
+          <div class="spec"><span class="sico">📶</span><span data-key="wifi">Premium AC + WiFi</span></div>
+          <div class="spec"><span class="sico">⭐</span><span data-key="lux">Luxury Interior</span></div>
+        </div>
+        <a href="tel:9603689642" class="vehicle-book" data-key="book_num">📞 Book: 9603689642</a>
+      </div>
+    </div>
+
+    <div class="bus-banner">
+      <div class="bus-banner-text">
+        <h3 data-key="bus_title">🚌 Bus Facility Available!</h3>
+        <p data-key="bus_sub">Large group trip, pilgrimage, or corporate outing? We offer comfortable bus services for bigger groups — perfect for tours, weddings, and events from Ravulapalem.</p>
+      </div>
+      <a href="tel:9603689642" class="bus-banner-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-key="enquire">Enquire Now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 3. BOOKING FORM ══════ -->
+<section id="booking" style="background:var(--off-white);">
+  <span class="section-tag" data-key="book_tag">Book a Ride</span>
+  <h2 class="section-title" data-key="book_title">Send Your<br>Booking Enquiry</h2>
+  <p class="section-sub" data-key="book_sub">Fill the form and we'll call you within minutes to confirm your ride.</p>
+  <div class="booking-wrap">
+    <form class="booking-form" id="bookingForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-key="f_name">Your Name *</label>
+          <input type="text" name="name" placeholder="e.g. Ravi Kumar" required>
+        </div>
+        <div class="form-group">
+          <label data-key="f_phone">Phone Number *</label>
+          <input type="tel" name="phone" placeholder="e.g. 9603689642" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-key="f_vehicle">Vehicle Type</label>
+          <select name="vehicle">
+            <option value="">-- Select Vehicle --</option>
+            <option value="Swift">Maruti Swift (Hatchback)</option>
+            <option value="Dzire">Maruti Dzire (Sedan)</option>
+            <option value="Ertiga">Maruti Ertiga (7-Seater)</option>
+            <option value="Innova">Toyota Innova (Premium)</option>
+            <option value="Bus">Bus (Group Travel)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-key="f_trip_type">Trip Type</label>
+          <select name="trip_type">
+            <option value="">-- Select Trip --</option>
+            <option value="Local">Local City Ride</option>
+            <option value="Outstation">Outstation Trip</option>
+            <option value="Airport">Airport Transfer</option>
+            <option value="Tour">Tour Package</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-key="f_from">From Location</label>
+          <input type="text" name="from_location" placeholder="e.g. Ravulapalem">
+        </div>
+        <div class="form-group">
+          <label data-key="f_to">To Location</label>
+          <input type="text" name="to_location" placeholder="e.g. Vizag Airport">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-key="f_date">Travel Date</label>
+          <input type="date" name="trip_date">
+        </div>
+        <div class="form-group">
+          <label data-key="f_msg">Message (Optional)</label>
+          <input type="text" name="message" placeholder="Any special requirements?">
+        </div>
+      </div>
+      <div class="form-submit-row">
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span data-key="send_enquiry">Send Enquiry</span>
+        </button>
+        <a href="https://wa.me/919603689642?text=Hi%20John%20Travels!%20I%20want%20to%20book." target="_blank" class="btn-wa-book">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-key="or_wa">Or Book on WhatsApp</span>
+        </a>
+      </div>
+      <div id="form-msg" class="form-msg" style="display:none;"></div>
+    </form>
+    <div class="booking-side">
+      <div class="booking-info-card"><div class="bic-icon">📞</div><div class="bic-label" data-key="call_directly">Prefer to Call?</div><a href="tel:9603689642" class="bic-value">9603689642</a><p class="bic-note" data-key="call_note">Available 24/7 — call anytime for instant booking.</p></div>
+      <div class="booking-info-card"><div class="bic-icon">⚡</div><div class="bic-label" data-key="quick_confirm">Quick Confirmation</div><p class="bic-note" data-key="quick_note">We call back within 5 minutes of your enquiry to confirm the ride.</p></div>
+      <div class="booking-info-card"><div class="bic-icon">📍</div><div class="bic-label" data-key="our_base">Our Base</div><p class="bic-note" data-key="base_note">Ravulapalem, East Godavari, AP. Serving all nearby towns & outstation routes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 4. DRIVER PROFILE ══════ -->
+<section id="driver">
+  <span class="section-tag" data-key="driver_tag">Meet Your Driver</span>
+  <h2 class="section-title" data-key="driver_title">Your Trusted<br>Driver Profile</h2>
+  <p class="section-sub" data-key="driver_sub">Experienced, licensed, and always professional — John is committed to making every journey comfortable and safe.</p>
+  <div class="driver-card-wrap">
+    <div class="driver-card">
+      <div class="driver-photo-wrap">
+        <img src="{{ url_for('static', filename='images/john.jpeg') }}" alt="John – Your Driver" class="driver-photo">
+        <div class="driver-badge-online">● Available Now</div>
+      </div>
+      <div class="driver-info">
+        <div class="driver-top">
+          <div>
+            <h3 class="driver-name">John</h3>
+            <p class="driver-role" data-key="driver_role">Professional Cab Driver</p>
+          </div>
+          <div class="driver-rating-big">
+            <div class="stars-big">★★★★★</div>
+            <div class="rating-text">5.0 / 5.0</div>
+          </div>
+        </div>
+        <div class="driver-stats-row">
+          <div class="d-stat"><div class="d-stat-num">5+</div><div class="d-stat-lbl" data-key="d_exp">Years Experience</div></div>
+          <div class="d-stat"><div class="d-stat-num">1500+</div><div class="d-stat-lbl" data-key="d_trips">Trips Done</div></div>
+          <div class="d-stat"><div class="d-stat-num">5★</div><div class="d-stat-lbl" data-key="d_rating">Rating</div></div>
+          <div class="d-stat"><div class="d-stat-num">100%</div><div class="d-stat-lbl" data-key="d_safe">Safety Record</div></div>
+        </div>
+        <div class="driver-skills">
+          <span class="skill-tag">Telugu</span>
+          <span class="skill-tag">English</span>
+          <span class="skill-tag" data-key="sk_routes">Route Expert</span>
+          <span class="skill-tag" data-key="sk_night">Night Driving</span>
+          <span class="skill-tag" data-key="sk_outstation">Outstation Specialist</span>
+        </div>
+        <p class="driver-bio" data-key="driver_bio">"I take pride in giving every passenger a safe, comfortable, and on-time journey. Your satisfaction is my mission."</p>
+        <div class="driver-actions">
+          <a href="tel:9603689642" class="btn-driver-call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span data-key="call_john">Call John: 9603689642</span>
+          </a>
+          <a href="https://wa.me/919603689642?text=Hi%20John!%20I%20want%20to%20book%20a%20cab." target="_blank" class="btn-driver-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-key="wa_john">WhatsApp John</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 5. TESTIMONIALS ══════ -->
+<section id="testimonials" style="background:var(--off-white);">
+  <span class="section-tag" data-key="test_tag">Customer Reviews</span>
+  <h2 class="section-title" data-key="test_title">What Our Customers Say</h2>
+  <p class="section-sub" data-key="test_sub">Real reviews from real passengers who travelled with John Travels.</p>
+  <div class="slider-wrap">
+    <div class="testimonials-slider" id="testimonialsSlider">
+      <!-- Loaded dynamically by JS from /api/testimonials -->
+    </div>
+    <button class="slider-btn prev" id="sliderPrev" aria-label="Previous">&#8592;</button>
+    <button class="slider-btn next" id="sliderNext" aria-label="Next">&#8594;</button>
+  </div>
+  <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<!-- ══════ 6. ABOUT ══════ -->
+<section id="about">
+  <div class="about-intro">
+    <span class="section-tag" data-key="about_tag">Who We Are</span>
+    <h2 class="section-title" data-key="about_title">Why Choose<br>John Travels?</h2>
+    <p class="section-sub" data-key="about_sub">Serving Ravulapalem and surrounding areas with professional, comfortable, and affordable travel solutions.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="card-title" data-key="c1_title">Regular Maintenance</div><div class="card-text" data-key="c1_text">All vehicles undergo routine checks to ensure zero breakdowns on your journey.</div></div>
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="card-title" data-key="c2_title">Safe &amp; Reliable</div><div class="card-text" data-key="c2_text">Verified drivers, insured vehicles — your safety is always first.</div></div>
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="card-title" data-key="c3_title">Spotless Cleaning</div><div class="card-text" data-key="c3_text">Interior deep-cleaned before every trip. Fresh, hygienic vehicles every ride.</div></div>
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-5.99-5.99 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div class="card-title" data-key="c4_title">24/7 Support</div><div class="card-text" data-key="c4_text">Call or WhatsApp anytime — round the clock for bookings &amp; help.</div></div>
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg></div><div class="card-title" data-key="c5_title">Expert Drivers</div><div class="card-text" data-key="c5_text">Experienced, polite, licensed drivers who know every route perfectly.</div></div>
+    <div class="about-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="card-title" data-key="c6_title">Always On Time</div><div class="card-text" data-key="c6_text">Punctuality is our promise. We pick you up exactly when you need.</div></div>
+  </div>
+</section>
+
+<!-- ══════ 7. CONTACT ══════ -->
+<section id="contact">
+  <span class="section-tag" data-key="contact_tag">Get In Touch</span>
+  <h2 class="section-title" data-key="contact_title">Book Your Ride<br>Today</h2>
+  <p class="section-sub" data-key="contact_sub">Reach out via call or WhatsApp — always ready to assist with bookings and enquiries.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon-wrap phone"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 9.11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="contact-label" data-key="ct_phone">Phone / Call</div>
+      <div class="contact-value">96036 89642</div>
+      <div class="contact-detail" data-key="ct_phone_d">Available 24/7 for bookings and emergencies.</div>
+      <a href="tel:9603689642" class="contact-action call-btn">📞 <span data-key="call_now">Call Now</span></a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon-wrap whatsapp"><svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="contact-label" data-key="ct_wa">WhatsApp</div>
+      <div class="contact-value">96036 89642</div>
+      <div class="contact-detail" data-key="ct_wa_d">Book on WhatsApp — send trip details, confirm in minutes.</div>
+      <a href="https://wa.me/919603689642?text=Hi%20John%20Travels!%20I%20want%20to%20book." class="contact-action wa-btn" target="_blank">💬 <span data-key="chat_wa">Chat on WhatsApp</span></a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon-wrap location"><svg viewBox="0 0 24 24" fill="none" stroke="#f0c84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="contact-label" data-key="ct_loc">Location</div>
+      <div class="contact-value">Ravulapalem</div>
+      <div class="contact-detail" data-key="ct_loc_d">East Godavari District, Andhra Pradesh. Covering all nearby areas &amp; outstation.</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon-wrap hours"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="contact-label" data-key="ct_avail">Availability</div>
+      <div class="contact-value">24 × 7</div>
+      <div class="contact-detail" data-key="ct_avail_d">Round the clock, every day including holidays. Your travel never stops.</div>
+    </div>
+    <div class="contact-map-note">
+      <div style="font-size:50px;opacity:.12;flex-shrink:0;">📍</div>
+      <div class="map-text">
+        <h4 data-key="serving_title">Serving Ravulapalem &amp; Beyond</h4>
+        <p data-key="serving_sub">Local rides, outstation trips to Vizag, Hyderabad, Vijayawada, airport transfers, and pilgrimage tours — all from Ravulapalem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="logo" style="gap:10px;text-decoration:none;">
+      <div class="logo-icon" style="width:36px;height:36px;font-size:14px;">JT</div>
+      <div class="logo-text"><span class="logo-name" style="font-size:15px;">John Travels</span><span class="logo-tagline">Ravulapalem</span></div>
+    </div>
+    <p class="footer-copy">© 2024 John Travels. All Rights Reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#home" data-key="nav_home">Home</a>
+    <a href="#vehicles" data-key="nav_vehicles">Vehicles</a>
+    <a href="#booking" data-key="nav_booking">Book Now</a>
+    <a href="#driver" data-key="nav_driver">Driver</a>
+    <a href="#about" data-key="nav_about">About</a>
+    <a href="#contact" data-key="nav_contact">Contact</a>
+    <a href="/admin" style="opacity:.3;">Admin</a>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a id="wa-float" href="https://wa.me/919603689642?text=Hi%20John%20Travels!%20I%20want%20to%20book." target="_blank" aria-label="Book on WhatsApp">
+  <div class="wa-tooltip" data-key="book_wa_tip">Book on WhatsApp</div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.074 4.074 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<script src="{{ url_for('static', filename='js/translations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
